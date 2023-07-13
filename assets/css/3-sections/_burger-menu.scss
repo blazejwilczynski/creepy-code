@@ -1,0 +1,210 @@
+/* Burger menu based on tutorial by Traversy media. Adapted to my project */
+
+.menu-wrap {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 1;
+    float: right;
+    display: none;
+  
+  
+    }
+  
+  .menu-wrap .toggler {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+  .menu-wrap .hamburger {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    padding: 0.75rem;
+    //background: lightcoral;
+    //opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  /* Burger menu line */
+  
+  .menu-wrap .hamburger > div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: $red-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+  
+  /* Top and bottom line in burger menu using :after and :before  */
+  .menu-wrap .hamburger > div:before,
+  .menu-wrap .hamburger > div:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+  }
+  /* moves one of the additional lines to the bottom (:after) */
+  .menu-wrap .hamburger > div:after {
+    top: 10px;
+  }
+  
+  /* styling the chceckbox, which is toggler in this case */
+  .menu-wrap .toggler:checked + .hamburger > div  {
+    transform: rotate(135deg);
+  
+  }
+  
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+    top:0;
+    transform: rotate(90deg);
+  }
+  
+  .menu-wrap .toggler:checked + .menu-wrap  {
+    position: fixed;
+  
+  }
+  
+  
+  /* Rotate when it's hover */
+  .menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+  }
+  
+  
+  /* Showing menu */
+  
+  .menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+    //transform: scale(1);
+  }
+  
+  .menu-wrap .menu {
+    //position: absolute;
+    top: 0;
+    left: 0;
+   
+    z-index: -1;
+    width: 100%;
+    height: 300px;
+    background: $light-brown;
+    
+  
+    //padding-right: 10px;
+    margin-top: -10px;
+    margin-left: 5px;
+  
+    //transform: scale(0);
+    font-size: 20px;
+    //opacity: 0;
+    //transition: all 0.4s ease;
+    //padding: 10px;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-wrap .menu > div {
+    //background: pink;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  .menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: $red-base;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 30px;
+    font-size: 17px;
+    font-family: Lato;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+  
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a:hover {
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+  
+  }
+
+  .social-logo-nav-mobile {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    
+  
+    background-repeat: no-repeat;
+    margin-top: 14px;
+    margin-right: 10px;
+    z-index: 10;
+  
+  
+  }
+  
+  .social-logo-nav-mobile path {
+    fill: $red-base;
+    
+  }
+  
+  .social-logo-nav-mobile circle {
+    fill: $red-base;
+   
+  }
+  
+  .social-logo-nav-mobile:hover path {
+    fill: $red-base-fade;
+  
+  }
+  
+  .social-logo-nav-mobile:hover circle {
+    fill: $red-base-fade;
+  }
+
+  #facebook-mobile {
+      margin-left: 80px;
+  }
+  
+  
+  
+  @media screen and (max-width: 580px){
+  
+  .menu-wrap {
+    display: block;
+  }
+  }
+  
