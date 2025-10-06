@@ -1,0 +1,10 @@
+.landing {
+    height: 500px;
+    width: 100%;
+    background: darkslategrey
+}
+
+h1 {
+    margin: 0;
+    padding: 15px;
+}
