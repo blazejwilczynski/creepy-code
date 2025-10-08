@@ -1,6 +1,6 @@
 import './styles/Navbar.css'
 import logo_light from '../assets/creepy-code-logo-light.svg'
-import logo_dark from '../assets/creepy-code-logo-white.png'
+import logo_dark from '../assets/creepy-code-logo-dark.svg'
 import toggle_light from '../assets/night.png'
 import toggle_dark from '../assets/day.png'
 

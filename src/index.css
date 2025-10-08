@@ -11,6 +11,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-primary-light: #F6F8FA;
+  --text-primary-light: black;
+  --background-primary-dark: #0D1117;
+  --text-primary-dark: #C9D1D9;
 }
 
 * {

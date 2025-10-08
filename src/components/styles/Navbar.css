@@ -5,7 +5,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: var(--background-primary-light);
+    color: var(--text-primary-light);
     padding: 15px 7%;
     transition: 0.5s;
     font-family: 'Inter', sans-serif;
@@ -14,8 +15,8 @@ nav {
 }
 
 .dark nav {
-    background: #121212;
-    color: #E0E0E0;
+    background: var(--background-primary-dark);
+    color: var(--text-primary-dark);
     transition: 0.5s;
 }
 
@@ -34,7 +35,7 @@ ul {
 ul li {
     display: inline-block;
     margin: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
 }
 
