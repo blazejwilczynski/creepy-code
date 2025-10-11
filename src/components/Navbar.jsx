@@ -1,8 +1,10 @@
 import './styles/Navbar.css'
 import logo_light from '../assets/creepy-code-logo-light.svg'
 import logo_dark from '../assets/creepy-code-logo-dark.svg'
-import toggle_light from '../assets/night.png'
-import toggle_dark from '../assets/day.png'
+import toggle_light from '../assets/night.svg'
+import toggle_dark from '../assets/day.svg'
+import github_light from '../assets/github-logo-light.svg'
+import github_dark from '../assets/github-logo-dark.svg'
 
 
 export function Navbar({theme, setTheme}) {
@@ -22,7 +24,7 @@ export function Navbar({theme, setTheme}) {
                 <li>Blog</li>
                 <li>Links</li>
             </ul>
-           
+            <img src={theme === 'light' ? github_light : github_dark} alt="" className='github-logo' />
             <img onClick={() =>{toggle_mode()}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className='toggle-icon' />
         </nav>
     )

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
+/* Light Mode */
+
 nav {
     width: 100%;
     display: flex;
@@ -14,11 +16,6 @@ nav {
     font-size: 20px;
 }
 
-.dark nav {
-    background: var(--background-primary-dark);
-    color: var(--text-primary-dark);
-    transition: 0.5s;
-}
 
 .logo {
     height: 45px;
@@ -45,45 +42,15 @@ ul li {
     margin-left: 40px;
 }
 
-.search-icon {
-    width: 20px;
-    cursor: pointer;
-    margin-left: 40px;
-    
+
+
+/* Dark Mode */
+
+.dark nav {
+    background: var(--background-primary-dark);
+    color: var(--text-primary-dark);
+    transition: 0.5s;
 }
 
 
-.search-box {
-    display: flex;
-    align-items: center;
-    background: #242424;
-    padding: 10px 20px;
-    border-radius: 50px;;
-}
-
-.dark .search-box {
-    background: #fff;
-}
-
-.search-box input {
-    padding: 6px;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    color: #fff;
-    font-size: 18px;
-    max-width: 200px;
-}
-
-.dark .search-box input {
-    color: #242424;
-}
-
-.search-box input::placeholder {
-    color: #fff;
-}
-
-.dark .search-box input::placeholder {
-    color: #242424;
-}
 
