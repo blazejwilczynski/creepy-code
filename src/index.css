@@ -16,6 +16,8 @@
   --text-primary-light: #2E2E39;
   --background-primary-dark: #0D1117;
   --text-primary-dark: #C9D1D9;
+  --accent-color-light: #ED7495;
+  --accent-color-dark: #FF4971
 }
 
 * {
@@ -74,7 +76,7 @@ button:focus-visible {
 .App {
   width: 100vw;
   height: 100vh;
-  background: #ced8ff;
+  background: lightcoral;
   transition: 0.5s;
 }
 

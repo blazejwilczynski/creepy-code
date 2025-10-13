@@ -17,15 +17,19 @@ export function Navbar({theme, setTheme}) {
         <nav>   
             <img src={theme === 'light' ? logo_light : logo_dark} alt="" className='logo'/>
             <ul>
-                <li>Home</li>
-                <li>Projects</li>   
-                <li>About</li>
-                <li>Contact</li>
-                <li>Blog</li>
-                <li>Links</li>
+                <li><a href="#" className="nav-link">Home</a></li>
+                <li><a href="#" className="nav-link">Projects</a></li>   
+                <li><a href="#" className="nav-link">About</a></li>
+                <li><a href="#" className="nav-link">Contact</a></li>
+                <li><a href="#" className="nav-link">Blog</a></li>
+                <li><a href="#" className="nav-link">Links</a></li>
             </ul>
-            <img src={theme === 'light' ? github_light : github_dark} alt="" className='github-logo' />
+            <div className='nav-icons'>
+            <a href="https://www.github.com/blazejwilczynski" target="_blank" rel="noopener noreferrer"> 
+                <img src={theme === 'light' ? github_light : github_dark} alt="" className='github-logo' />
+            </a>    
             <img onClick={() =>{toggle_mode()}} src={theme === 'light' ? toggle_light : toggle_dark} alt="" className='toggle-icon' />
+            </div>
         </nav>
     )
 }   
