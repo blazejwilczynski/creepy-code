@@ -18,7 +18,7 @@
 .landing-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     height: 500px;
     background-color: darksalmon;
@@ -27,5 +27,55 @@
 .emoji-icons {
     width: 300px;
     height: 300px;
-    background-color: lightblue;
+    
+}
+
+.emoji-row {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.emoji-row img {
+    width: 55px;
+}
+
+.landing-text {
+    width: 50%;
+    height: 300px;
+    background-color: lightgreen;
+}
+
+/* --- dynamiczne słowo w linii --- */
+.changing-word{
+  display:inline-block;
+  position:relative;
+  height:1em;                 /* stabilna wysokość */
+  margin:0 .25ch;
+  color:#e38aa3;              /* róż dla słowa */
+}
+.changing-word__text{
+  position:absolute;
+  left:0; top:0;
+  white-space:nowrap;
+  font-weight:700;
+}
+.changing-word__underline{
+  position:absolute;
+  left:0;
+  bottom:-0.15em;
+  height:.1em;
+  background:#e38aa3;         /* ten sam róż */
+  border-radius:999px;
+  pointer-events:none;
+}
+
+/* (opcjonalnie) dopracowanie nagłówków */
+.landing-text h2{
+  font-size: clamp(36px, 6vmin, 72px);
+  line-height:1.1;
+  font-weight:700;
+  margin:0;
 }

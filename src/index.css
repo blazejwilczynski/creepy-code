@@ -1,3 +1,20 @@
+/* Notes */
+
+/*
+
+Nazwa	Typ urządzenia	Szerokość (min-width)	Przykład media query
+
+xs	Telefony małe	0px – 575px	@media (max-width: 575px)
+sm	Telefony duże / małe tablety	576px	@media (min-width: 576px)
+md	Tablety	768px	@media (min-width: 768px)
+lg	Laptopy / małe desktopy	992px	@media (min-width: 992px)
+xl	Duże monitory	1200px	@media (min-width: 1200px)
+xxl	Bardzo duże ekrany	1400px	@media (min-width: 1400px)
+
+*/
+
+/* Global styles */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

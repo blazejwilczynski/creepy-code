@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import "./styles/Landing.css";
 
 // 🔹 oryginalne emoji
@@ -48,88 +48,48 @@ const newIcons = [
   video_game,
 ];
 
-// 🔤 słowa do wyświetlania w miejscu podkreślenia
-const WORDS = ["Websites", "Apps", "Brands", "Ideas", "Products"];
-
 export function Landing() {
   const COUNT = originalIcons.length;
 
-  // --- EMOJI ---
+  // aktualny stan wyświetlanych ikon
   const [icons, setIcons] = useState(originalIcons);
+
+  // który index właśnie animujemy
   const [animatingIndex, setAnimatingIndex] = useState(null);
+
+  // refs do sterowania cyklem
   const cursorRef = useRef(0); // 0..8
   const phaseRef = useRef("toNew"); // "toNew" | "toOriginal"
 
   useEffect(() => {
     const interval = setInterval(() => {
       const i = cursorRef.current;
+
+      // 1) animuj aktualną ikonkę
       setAnimatingIndex(i);
 
+      // 2) po animacji podmień TYLKO jedną ikonkę
       setTimeout(() => {
         setIcons((prev) => {
           const next = [...prev];
-          next[i] =
-            phaseRef.current === "toNew" ? newIcons[i] : originalIcons[i];
+          next[i] = phaseRef.current === "toNew" ? newIcons[i] : originalIcons[i];
           return next;
         });
 
         setAnimatingIndex(null);
 
+        // 3) przesuń kursor; na końcu odwróć kierunek
         if (i === COUNT - 1) {
-          phaseRef.current =
-            phaseRef.current === "toNew" ? "toOriginal" : "toNew";
+          phaseRef.current = phaseRef.current === "toNew" ? "toOriginal" : "toNew";
           cursorRef.current = 0;
         } else {
           cursorRef.current = i + 1;
         }
-      }, 500);
-    }, 3000);
+      }, 500); // czas obrotu
+    }, 3000); // co 3 sekundy
 
     return () => clearInterval(interval);
   }, [COUNT]);
-
-  // --- TEKST: dynamiczne słowo ---
-  const [wordIndex, setWordIndex] = useState(0);
-  const wordRef = useRef(null);
-  const [underlineWidth, setUnderlineWidth] = useState(0);
-
-  // zmiana słowa co 3 sekundy
-  useEffect(() => {
-    const t = setInterval(
-      () => setWordIndex((i) => (i + 1) % WORDS.length),
-      3000
-    );
-    return () => clearInterval(t);
-  }, []);
-
-  // dopasowanie szerokości podkreślenia do słowa
-  useEffect(() => {
-    if (!wordRef.current) return;
-    const ro = new ResizeObserver((entries) => {
-      const w = entries[0].contentRect.width;
-      setUnderlineWidth(w);
-    });
-    ro.observe(wordRef.current);
-    return () => ro.disconnect();
-  }, [wordIndex]);
-
-  const wordVariants = {
-    initial: { opacity: 0, y: 20, rotateX: -90, filter: "blur(6px)" },
-    animate: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      filter: "blur(0)",
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      rotateX: 80,
-      filter: "blur(6px)",
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
 
   return (
     <div className="landing">
@@ -155,34 +115,9 @@ export function Landing() {
         {/* tekst */}
         <div className="landing-text">
           <h2>We Bring</h2>
-          <h2>
-  Your{" "}
-  <span className="changing-word">
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={WORDS[wordIndex]}
-        ref={wordRef}
-        className="changing-word__text"
-        variants={wordVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
-        {WORDS[wordIndex]}
-      </motion.span>
-    </AnimatePresence>
-    <motion.span
-      className="changing-word__underline"
-      animate={{
-        width: underlineWidth,
-        opacity: [0, 1, 1, 0],
-      }}
-      transition={{ duration: 0.8, times: [0, 0.2, 0.8, 1] }}
-    />
-  </span>
-</h2>
-
-<h2>To Virtual Life</h2>
+          <h2>Your</h2>
+          <span>_____________</span>
+          <h2>To Virtual Life</h2>
         </div>
       </div>
     </div>
