@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Landing.css";
 
-// 🔹 oryginalne emoji
+// original emoji
 import upside_face from "../assets/emoji/upside_down_face.png";
 import smiley_face_sunglasses from "../assets/emoji/smiling_face_with_sunglasses.png";
 import alien_monster from "../assets/emoji/alien_monster.png";
@@ -13,7 +13,7 @@ import guitar from "../assets/emoji/guitar.png";
 import soccer_ball from "../assets/emoji/soccer_ball.png";
 import rocket from "../assets/emoji/rocket.png";
 
-// 🔹 nowe emoji
+// new emoji
 import exploding_head from "../assets/emoji/exploding_head.png";
 import dizzy_face from "../assets/emoji/dizzy_face.png";
 import pumpkin from "../assets/emoji/pumpkin.png";
@@ -155,32 +155,41 @@ export function Landing() {
         {/* tekst */}
         <div className="landing-text">
           <h2>We Bring</h2>
-          <h2>
+
+
+<h2>
   Your{" "}
   <span className="changing-word">
+    {/* Duch wyznaczający szerokość */}
+    <span className="changing-word__ghost">{WORDS[wordIndex]}</span>
+
+    {/* Czerwone, animowane słowo */}
     <AnimatePresence mode="wait">
       <motion.span
         key={WORDS[wordIndex]}
-        ref={wordRef}
         className="changing-word__text"
-        variants={wordVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        initial={{ opacity: 0, y: 20, rotateX: -90, filter: "blur(6px)" }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          filter: "blur(0)",
+          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+        }}
+        exit={{
+          opacity: 0,
+          y: -20,
+          rotateX: 80,
+          filter: "blur(6px)",
+          transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+        }}
       >
         {WORDS[wordIndex]}
       </motion.span>
     </AnimatePresence>
-    <motion.span
-      className="changing-word__underline"
-      animate={{
-        width: underlineWidth,
-        opacity: [0, 1, 1, 0],
-      }}
-      transition={{ duration: 0.8, times: [0, 0.2, 0.8, 1] }}
-    />
   </span>
 </h2>
+
 
 <h2>To Virtual Life</h2>
         </div>

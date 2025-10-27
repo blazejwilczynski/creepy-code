@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 .landing {
-    height: 600px;
+    /* min-height: 100vh; */
+    height: auto;
     width: 100%;
+    font-family: 'Lato', sans-serif;
     background: var(--background-primary-light);
     padding: 50px;
     transition: 0.5s;
@@ -21,7 +26,7 @@
     justify-content: space-around;
     width: 100%;
     height: 500px;
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
 }
 
 .emoji-icons {
@@ -35,7 +40,7 @@
     height: 33.33%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .emoji-row img {
@@ -43,39 +48,58 @@
 }
 
 .landing-text {
-    width: 50%;
+    width: 35%;
     height: 300px;
-    background-color: lightgreen;
+    padding-top: 25px;
+    /* background-color: lightgreen; */
 }
 
-/* --- dynamiczne słowo w linii --- */
-.changing-word{
-  display:inline-block;
-  position:relative;
-  height:1em;                 /* stabilna wysokość */
-  margin:0 .25ch;
-  color:#e38aa3;              /* róż dla słowa */
+.changing-word {
+  position: relative;
+  display: inline-block;
+  font-family: 'Carter One', cursive;
+  color: var(--text-color-primary-light);
+  font-weight: 400;
+  perspective: 800px;
 }
-.changing-word__text{
-  position:absolute;
-  left:0; top:0;
-  white-space:nowrap;
-  font-weight:700;
+
+/* Duch — tylko dla szerokości, ale niewidoczny */
+.changing-word__ghost {
+  visibility: hidden;
+  pointer-events: none;
 }
-.changing-word__underline{
-  position:absolute;
-  left:0;
-  bottom:-0.15em;
-  height:.1em;
-  background:#e38aa3;         /* ten sam róż */
-  border-radius:999px;
-  pointer-events:none;
+
+/* Czerwony animowany tekst */
+.changing-word__text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-color-light)
 }
 
 /* (opcjonalnie) dopracowanie nagłówków */
-.landing-text h2{
-  font-size: clamp(36px, 6vmin, 72px);
+.landing-text h2 {
+  font-size: 60px;
   line-height:1.1;
-  font-weight:700;
-  margin:0;
+  font-weight:500;
+  margin: 10px;
+}
+
+
+/* Style for dark mode */
+
+.dark .landing {
+  color: var(--text-primary-dark);
+}
+
+.dark .landing-text h2 {
+  color: var(--text-primary-dark);
+}
+
+.dark .changing-word {
+  color: var(--text-primary-dark);
+}
+
+.dark .changing-word__text {
+  color: var(--accent-color-dark)
 }
