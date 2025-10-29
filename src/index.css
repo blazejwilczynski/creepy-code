@@ -33,6 +33,14 @@ xxl	Bardzo duże ekrany	1400px	@media (min-width: 1400px)
   --text-primary-dark: #C9D1D9;
   --accent-color-light: #ED7495;
   --accent-color-dark: #FF4971;
+
+
+  --neon-pink: #ff4da6;
+  --neon-cyan: #22d3ee;
+  --glass-top: rgba(20,22,34,0.9);
+  --glass-bot: rgba(10,12,22,0.92);
+  --text-hi: #e6edff;
+  --text-lo: #9aa7c7;
 }
 
 * {

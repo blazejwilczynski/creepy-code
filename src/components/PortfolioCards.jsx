@@ -4,10 +4,11 @@ import "./styles/PortfolioCards.css";
 import pencil from "../assets/emoji/pencil.png";
 import artist_palette from "../assets/emoji/artist_palette.png";
 import guitar from "../assets/emoji/guitar.png";
+import skull from "../assets/emoji/skull.png";
 
 const projects = [
   {
-    id: "BlazejWilczynski",
+    id: "blazejwilczynski",
     emoji: [pencil, artist_palette],
     title: "Błażej",
     accent: "Wilczyński",
@@ -18,25 +19,25 @@ const projects = [
     gradient: "linear-gradient(to bottom, #fafafa, #f0f0f0)",
   },
   {
-    id: "runner",
+    id: "rockstar",
     emoji: [guitar],
-    title: "Pixel ",
-    accent: "Runner",
-    tagline: "Retro gra w przeglądarce — złap rytm kodu!",
-    tech: ["React", "Canvas"],
+    title: "Rockstar",
+    accent: "Book",
+    tagline: "Probably first website developed by Creepy Code. Currently Legacy Site.",
+    tech: ["Jekyll", "Adobe XD", "Affinity Designer"],
     cta: "Live Website",
-    href: "#",
+    href: "https://blazejwilczynski.github.io/rockstar-book/",
     gradient: "linear-gradient(to bottom, #fafafa, #f0f0f0)",
   },
   {
-    id: "caffelatte",
-    emoji: "☕",
-    title: "Caffe",
-    accent: "Latte",
-    tagline: "Twoje ulubione kawiarnie — w jednej mapie.",
-    tech: ["Svelte", "Mapbox"],
+    id: "skeleton",
+    emoji: [skull],
+    title: "Skeleton",
+    accent: "Book",
+    tagline: "Legacy Webiste for second book by Błażej Wilczyński - Skeleton, cyberpunk thriller",
+    tech: ["Jekyll", "Figma", "Affinity Designer"],
     cta: "Live Website",
-    href: "#",
+    href: "https://blazejwilczynski.github.io/skeleton-book/",
     gradient: "linear-gradient(to bottom, #fafafa, #f0f0f0)",
   },
 ];
