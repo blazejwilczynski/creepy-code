@@ -34,7 +34,7 @@ const projects = [
     emoji: [skull],
     title: "Skeleton",
     accent: "Book",
-    tagline: "Legacy Webiste for second book by Błażej Wilczyński - Skeleton, cyberpunk thriller",
+    tagline: "Legacy Webiste for second book by Błażej Wilczyński - Skeleton, cyberpunk thriller.",
     tech: ["Jekyll", "Figma", "Affinity Designer"],
     cta: "Live Website",
     href: "https://blazejwilczynski.github.io/skeleton-book/",
@@ -79,9 +79,9 @@ function Card({ p }) {
   );
 }
 
-export default function PortfolioCards() {
+export function PortfolioCards() {
   return (
-    <section className="portfolio-section">
+    <section className="portfolio-section" id="projects">
     <div className="portfolio-grid">
       {projects.map((p) => (
         <Card key={p.id} p={p} />

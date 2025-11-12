@@ -1,0 +1,106 @@
+.about-section {
+    background: var(--background-primary-light);
+    height: auto;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+   
+}
+
+
+/* ABOUT DESK STYLE START */
+
+.about-desk-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    width: 90%;
+    max-width: 1200px;
+    background: lightcoral;
+}
+
+.about-desk-image img {
+    width: 350px;
+    margin-left: 35px;
+}
+
+.about-desk-text, 
+.about-mobile-text {
+    display: flex;
+    align-items: center;
+    /* background: lightsalmon; */
+    height: 400px;
+    width: 450px;
+    font-family: 'Lato', sans-serif;
+    font-size: 26px;
+    color: var(--text-primary-light);
+}
+
+.about-desk-text a,
+.about-mobile-text a {
+  font-weight: bold;
+  color: inherit; /* zachowuje kolor tekstu */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.about-desk-text a::after,
+.about-mobile-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color-light); /* użyj swojego koloru akcentowego */
+  transition: width 0.3s ease;
+}
+
+.about-desk-text a:hover,
+ .about-mobile-text a:hover {
+  color: var(--accent-color-light);
+}
+
+.about-desk-text a:hover::after,
+.about-mobile-text a:hover::after {
+  width: 100%;
+}
+
+/* ABOUT DESK STYLE END */
+
+/* ABOUT MOBILE STYLE START */
+
+.about-mobile-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    width: 90%;
+    max-width: 1200px;
+    background: lightsalmon;
+}
+
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em; /* delikatne opuszczenie, żeby wizualnie się zgrywało */
+  margin: 0 .25em;
+  display: inline-block;
+  /* opcjonalnie przyciemnić/jasność, jeśli w dark mode różnie wyglądają:
+  filter: brightness(0) saturate(100%); 
+  */
+}
+
+
+/* DARK MODE */
+
+
+.dark .about-section {
+    background: var(--background-primary-dark);
+}
+

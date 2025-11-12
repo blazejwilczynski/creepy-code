@@ -7,7 +7,8 @@
     width: 100%;
     font-family: 'Lato', sans-serif;
     background: var(--background-primary-light);
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     transition: 0.5s;
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
     height: 500px;
     /* background-color: darksalmon; */
 }
@@ -32,6 +33,7 @@
 .emoji-icons {
     width: 300px;
     height: 300px;
+    /* background-color: lightcoral; */
     
 }
 
@@ -102,4 +104,28 @@
 
 .dark .changing-word__text {
   color: var(--accent-color-dark)
+}
+
+@media screen and (min-width: 1400px) {
+  
+  .landing-wrapper {
+      width: 80%;
+  }
+
+  .landing-text {
+      width: 40%;
+  }
+ 
+}
+
+@media screen and (min-width: 1600px) {
+  
+  .landing-wrapper {
+      width: 70%;
+  }
+
+  .landing-text {
+      width: 40%;
+  }
+ 
 }

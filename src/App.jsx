@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Navbar } from './components/Navbar'
 import { Landing } from './components/Landing'
-import PortfolioCards from './components/PortfolioCards';
+import { PortfolioCards } from './components/PortfolioCards';
+import { About } from './components/About';
 
 
 function App()  {
@@ -18,6 +19,7 @@ function App()  {
       <Navbar theme={theme} setTheme={setTheme}/>
       <Landing />
       <PortfolioCards />
+      <About />
     </div>
   )
 }
