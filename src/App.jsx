@@ -19,7 +19,7 @@ function App()  {
       <Navbar theme={theme} setTheme={setTheme}/>
       <Landing />
       <PortfolioCards />
-      <About />
+      <About theme={theme}/>
     </div>
   )
 }

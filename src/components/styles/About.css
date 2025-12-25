@@ -19,8 +19,8 @@
     align-items: center;
     height: 500px;
     width: 90%;
-    max-width: 1200px;
-    background: lightcoral;
+    max-width: 1100px;
+    /* background: lightcoral; */
 }
 
 .about-desk-image img {
@@ -71,6 +71,23 @@
   width: 100%;
 }
 
+.about-mobile-text {
+  height: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start; /* żeby nie centrowało tekstu */
+  gap: 10px; 
+}
+
+.about-mobile-image img {
+    width: 400px;
+    /* margin-left: 35px; */
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 /* ABOUT DESK STYLE END */
 
 /* ABOUT MOBILE STYLE START */
@@ -81,8 +98,8 @@
     align-items: center;
     height: 500px;
     width: 90%;
-    max-width: 1200px;
-    background: lightsalmon;
+    max-width: 1100px;
+    /* background: lightsalmon; */
 }
 
 .inline-icon {
@@ -102,5 +119,21 @@
 
 .dark .about-section {
     background: var(--background-primary-dark);
+}
+
+.dark .about-desk-text, 
+.dark .about-mobile-text {
+    color: var(--text-primary-dark);
+}
+
+
+.dark .about-desk-text a::after,
+.dark .about-mobile-text a::after {
+  background: var(--accent-color-dark); /* użyj swojego koloru akcentowego */
+}
+
+.dark .about-desk-text a:hover,
+.dark .about-mobile-text a:hover {
+  color: var(--accent-color-dark);
 }
 
